@@ -74,6 +74,9 @@ jsonファイルもフォーマットできるよう設定しています。
 ## Material UIのインストール、設定
 
 ```bash
+# mui install
+npm install @mui/material @emotion/react @emotion/styled
+# next.js integration
 npm install @mui/material-nextjs @emotion/cache
 ```
 
@@ -96,4 +99,49 @@ export default function RootLayout({
     </html>
   );
 }
+```
+
+Material UIに使用されているフォントを設定します。
+
+`src/theme.tsx`を作成し、設定項目を記述します。
+
+```tsx
+'use client';
+
+import { Roboto } from 'next/font/google';
+import { createTheme } from '@mui/material';
+
+const roboto = Roboto({
+  weight: ['300', '400', '500', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+});
+
+const theme = createTheme({
+  typography: {
+    fontFamily: roboto.style.fontFamily,
+  },
+});
+
+export default theme;
+```
+
+`src/app/layout.tsx`を変更します。
+
+```tsx
+// 略
+import { ThemeProvider } from '@mui/material';
+import theme from '@/theme';
+// 略
+  return (
+    <html lang="en">
+      <body className={inter.className}>
+        <AppRouterCacheProvider>
+          <ThemeProvider theme={theme}>{children}</ThemeProvider>
+        </AppRouterCacheProvider>
+      </body>
+    </html>
+  );
+}
+
 ```
