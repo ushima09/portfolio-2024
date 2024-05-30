@@ -3,8 +3,9 @@
 ## Next.jsのインストール
 
 ```bash
+# install next.js
 npx create-next-app@latest .
-
+# interactive experience (options)
 > TypeScript ... Yes
 > ESLint ... Yes
 > Tailwind CSS ... No
@@ -15,10 +16,11 @@ npx create-next-app@latest .
 
 ## ESLintの設定
 
+`.eslintrc.json`のルールを確認します。Next.jsであれば、すでに設定されているはずです。
+
 ルールは`strict`にします。
 
 ```json
-// .eslintrc.json
 {
   "extends": "next/core-web-vitals"
 }
@@ -40,7 +42,6 @@ node --eval "fs.writeFileSync('.prettierrc','{}\n')"
 ESLintとPrettierが干渉し合わないように、`.eslintrc.json`に設定項目を追記します。
 
 ```json
-// .eslintrc.json
 {
   "extends": ["next/core-web-vitals", "prettier"]
 }
@@ -67,5 +68,32 @@ jsonファイルもフォーマットできるよう設定しています。
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnPaste": true
   }
+}
+```
+
+## Material UIのインストール、設定
+
+```bash
+npm install @mui/material-nextjs @emotion/cache
+```
+
+`src/app/layout.tsx`で`AppRouterCacheProvider`をインポートし、`<body>`タグ配下をすべて`<AppRouterCacheProvider>`で囲います。
+
+```tsx
+// 略
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
+// 略
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body className={inter.className}>
+        <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
+      </body>
+    </html>
+  );
 }
 ```
