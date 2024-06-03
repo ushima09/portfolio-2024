@@ -1,4 +1,6 @@
 {
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.colorTheme": "Default Dark Modern",
   "files.autoSave": "onFocusChange",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,

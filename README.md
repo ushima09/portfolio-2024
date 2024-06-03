@@ -75,7 +75,7 @@ jsonファイルもフォーマットできるよう設定しています。
 
 ```bash
 # mui install
-npm install @mui/material @emotion/react @emotion/styled
+npm install @mui/icons-material @mui/material @emotion/react @emotion/styled
 # next.js integration
 npm install @mui/material-nextjs @emotion/cache
 ```
