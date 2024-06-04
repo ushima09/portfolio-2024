@@ -6,20 +6,25 @@ const Hero = () => {
     <Container
       id="top"
       disableGutters
-      sx={{ pt: { xs: 10, sm: 12 }, pr: 0, pl: 0 }}
+      sx={{ pt: { xs: 16, sm: 20 }, pr: 0, pl: 0 }}
     >
       <Typography
         variant="h1"
         align="center"
         sx={{
           color: lightBlue[600],
+          mb: { xs: 2, sm: 4 },
         }}
       >
-        Portfolio
+        portfolio
       </Typography>
-      <Container sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 1 }}>
+      <Container
+        sx={{ mb: 2, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 1 }}
+      >
         <Chip label="# フロントエンドエンジニア" />
         <Chip label="# コーダー" />
+      </Container>
+      <Container sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 1 }}>
         <Chip label="# 本" />
         <Chip label="# 音楽" />
         <Chip label="# ゲーム" />
