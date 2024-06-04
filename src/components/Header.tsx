@@ -12,15 +12,16 @@ import {
   ListItemText,
   Toolbar,
 } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
+import { Menu, GitHub } from '@mui/icons-material';
 import { Link as Scroll } from 'react-scroll';
 import { useState } from 'react';
+import Link from 'next/link';
 
 const menuLinks: Array<{ text: string; url: string }> = [
-  { text: 'TOP', url: 'top' },
-  { text: 'HISTORY / EXPERIENCE', url: 'history_and_experience' },
-  { text: 'SKILLS', url: 'skills' },
-  { text: 'PROJECTS', url: 'projects' },
+  { text: 'トップ', url: 'top' },
+  { text: '経歴', url: 'history_and_experience' },
+  { text: 'スキル', url: 'skills' },
+  { text: 'プロジェクト', url: 'projects' },
 ];
 
 const Header = () => {
@@ -46,9 +47,14 @@ const Header = () => {
               boxShadow: 3,
             }}
           >
-            <Box sx={{ display: { xs: 'flex', sm: 'none' } }}>
+            <Box
+              sx={{
+                display: { xs: 'flex', justifyContent: 'space-between', sm: 'none' },
+                width: 1,
+              }}
+            >
               <IconButton onClick={() => toggleDrawer(true)}>
-                <MenuIcon sx={{ color: '#000' }} />
+                <Menu sx={{ color: '#000' }} />
               </IconButton>
               <Drawer
                 open={open}
@@ -71,19 +77,43 @@ const Header = () => {
                   </List>
                 </Box>
               </Drawer>
+              <Button
+                sx={{ minWidth: 'auto' }}
+                href="https://github.com/ushima09"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <GitHub sx={{ color: '#000' }} />
+              </Button>
             </Box>
-            <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
-              {menuLinks.map((link) => (
-                <Scroll
-                  key={link.text}
-                  to={link.url}
-                  smooth={true}
-                >
-                  <Button sx={{ color: '#000', borderRadius: '999px', pr: 2, pl: 2 }}>
-                    {link.text}
-                  </Button>
-                </Scroll>
-              ))}
+            <Box
+              sx={{
+                display: { xs: 'none', sm: 'flex' },
+                justifyContent: 'space-between',
+                width: 1,
+              }}
+            >
+              <Box sx={{ display: 'flex' }}>
+                {menuLinks.map((link) => (
+                  <Scroll
+                    key={link.text}
+                    to={link.url}
+                    smooth={true}
+                  >
+                    <Button sx={{ color: '#000', borderRadius: '999px', pr: 2, pl: 2 }}>
+                      {link.text}
+                    </Button>
+                  </Scroll>
+                ))}
+              </Box>
+              <Button
+                sx={{ minWidth: 'auto', pr: 2, pl: 2 }}
+                href="https://github.com/ushima09"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <GitHub sx={{ color: '#000' }} />
+              </Button>
             </Box>
           </Toolbar>
         </Container>
