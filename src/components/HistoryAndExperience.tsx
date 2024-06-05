@@ -1,4 +1,4 @@
-import { Portrait, School, Work, Check } from '@mui/icons-material';
+import { School, Work, Check } from '@mui/icons-material';
 import {
   Timeline,
   TimelineConnector,

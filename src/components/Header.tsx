@@ -15,7 +15,6 @@ import {
 import { Menu, GitHub } from '@mui/icons-material';
 import { Link as Scroll } from 'react-scroll';
 import { useState } from 'react';
-import Link from 'next/link';
 
 const menuLinks: Array<{ text: string; url: string }> = [
   { text: 'トップ', url: 'top' },

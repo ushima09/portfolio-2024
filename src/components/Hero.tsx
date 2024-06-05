@@ -1,4 +1,4 @@
-import { Box, Chip, Container, Typography } from '@mui/material';
+import { Chip, Container, Typography } from '@mui/material';
 import { lightBlue } from '@mui/material/colors';
 
 const Hero = () => {
