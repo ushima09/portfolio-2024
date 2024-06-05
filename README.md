@@ -18,8 +18,6 @@ npx create-next-app@latest .
 
 `.eslintrc.json`のルールを確認します。Next.jsであれば、すでに設定されているはずです。
 
-ルールは`strict`にします。
-
 ```json
 {
   "extends": "next/core-web-vitals"
@@ -75,7 +73,7 @@ jsonファイルもフォーマットできるよう設定しています。
 
 ```bash
 # mui install
-npm install @mui/icons-material @mui/material @emotion/react @emotion/styled
+npm install @mui/icons-material @mui/material @emotion/react @emotion/styled @mui/lab
 # next.js integration
 npm install @mui/material-nextjs @emotion/cache
 ```
@@ -144,4 +142,14 @@ import theme from '@/theme';
   );
 }
 
+```
+
+## 便利な機能の追加
+
+### react-scroll
+
+ページ内アンカーの実装に便利です。
+
+```bash
+npm install -D react-scroll @types/react-scroll
 ```
