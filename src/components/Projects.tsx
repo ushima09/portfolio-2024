@@ -10,7 +10,7 @@ const projectItems = [
   },
   {
     title: 'gulp環境',
-    image: '',
+    image: '/image/project_02.png',
     desc: 'HTML/CSS（Scss）/JSのページ作成用の環境です。localhostで表示確認ができるようBrowser-Syncを導入しています。コード品質担保のため各種リンターを導入しています。',
   },
 ];
