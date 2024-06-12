@@ -3,3 +3,12 @@ body {
   background: linear-gradient(#81d4fa60 0%, #e1f5fe60 10%);
   font-feature-settings: 'palt';
 }
+
+a {
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+  opacity: 0.8;
+}
